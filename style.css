@@ -1,0 +1,71 @@
+body {
+    background-image: url("https://image.freepik.com/free-vector/white-abstract-background-design_23-2148825582.jpg");
+}
+
+/* nav bar */
+ 
+.nav-bar {
+    overflow: hidden;
+    background-color: green;
+    font-weight: 500;
+}
+ 
+.nav-bar a {
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: blue;
+    background-color: red;
+}
+ 
+.nav-bar a:hover {
+    background-color: #400000;
+    color: #82edfd;
+}
+ 
+.float-left {
+    float: left;
+}
+ 
+.float-right {
+    float: right;
+}
+ 
+.flexbox {
+    display: flex;
+    justify-content: space-around;
+}
+ 
+.outline {
+    padding: 10px;
+    margin: 20px;
+    border: solid black 1px;
+    width: 45%;
+    text-align: center;
+    border-radius: 10px;
+}
+ 
+.form {
+    width: 80%;
+}
+
+.outline-2a, .outline-2b, .outline-2c {
+    padding: 10px;
+    margin: 20px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.outline-2a {
+    width: 35%;
+}
+
+.outline-2b {
+    width: 35%;
+}
+
+.outline-2c {
+    width: 20%
+}
