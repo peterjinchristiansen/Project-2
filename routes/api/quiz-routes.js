@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Quiz = require('../../models');
 
+// Post route for Quiz table
 router.post('/', (req, res) => {
     Quiz.create({
             title: req.body.title,
