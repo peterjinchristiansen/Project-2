@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Quiz = require('../../models');
+const { Quiz, Question } = require('../../models');
 
 // Get All route for /api/quizzes
 router.get('/', (req, res) => {
@@ -9,7 +9,13 @@ router.get('/', (req, res) => {
             'title',
             'category'
         ],
-        order: [['created_at', 'DESC']]
+        order: [['created_at', 'DESC']],
+        include: [
+            {
+                model: Question,
+                attributes: ['id', 'prompt', 'choices', 'answer']
+            }
+        ]
     })
         .then(dbQuizData => res.json(dbQuizData))
         .catch(err => {
@@ -121,17 +127,17 @@ router.delete('/:id', (req, res) => {
             id: req.params.id
         }
     })
-    .then(dbQuizData => {
-        if (!dbQuizData) {
-            res.status(404).json({ message: 'No quiz found with this id' });
-            return;
-        }
-        res.json(dbQuizData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbQuizData => {
+            if (!dbQuizData) {
+                res.status(404).json({ message: 'No quiz found with this id' });
+                return;
+            }
+            res.json(dbQuizData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 
