@@ -1,7 +1,7 @@
 // requires express.js package and the created sequelize const from our connection.js file
 const express = require('express');
 const sequelize = require('./config/connection');
-const routes = require('./routes');
+const routes = require('./connections');
 
 // assigns an instance of express to app
 const app = express();
