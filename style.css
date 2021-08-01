@@ -31,6 +31,10 @@ body {
 .float-right {
     float: right;
 }
+
+.display-block {
+    display: block;
+}
  
 .flexbox {
     display: flex;
@@ -40,6 +44,12 @@ body {
 .flexbox-single {
     display: flex;
     justify-content: center;
+}
+
+.flexbox-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
  
 .outline {
@@ -55,11 +65,18 @@ body {
     width: 80%;
 }
 
-.outline-2a, .outline-2b, .outline-2c, .outline-3a, .outline-3b, .outline-3aa, .outline-3ab, .outline-5a {
+.outline-2a, .outline-2b, .outline-2c, .outline-3a, .outline-3b, .outline-3aa, .outline-3ab, .outline-4b, .outline-5a, .outline-6, .outline-7a, .outline-7b, .outline-7ba, .outline-7c, .outline-7ca {
     padding: 10px;
     margin: 20px;
     border: solid black 1px;
     text-align: center;
+    border-radius: 10px;
+}
+
+.outline-4a {
+    padding: 10px;
+    margin: 20px;
+    text-align: left;
     border-radius: 10px;
 }
 
@@ -83,6 +100,22 @@ body {
     width: 65%
 }
 
+.outline-4b {
+    height: 30%;
+}
+
 .outline-5a {
-    width: 50%
+    width: 50%;
+}
+
+.outline-6 {
+    width: 70%;
+}
+
+.outline-7a {
+    width: 40%;
+}
+
+.outline-7b, .outline-7c {
+    width: 50%;
 }
