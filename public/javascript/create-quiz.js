@@ -22,7 +22,7 @@ async function newQuizHandler(event) {
             alert(response.statusText);
         }
     } else {
-        alert("Please Input a Title and Select a Category for your Quiz!");
+        alert("Please Input a Title and Select a Category for your Quiz!")
     }
 
 }
