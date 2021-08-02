@@ -11,6 +11,14 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/quizsearch', (req, res) => {
+    Quiz.findAll({
+        attributes: [
+            'title',
+            'category',
+            'created_at'
+        ]
+        // add in an includes that will get the user that created the quiz
+    })
     res.render('quiz-search-page');
 });
 
