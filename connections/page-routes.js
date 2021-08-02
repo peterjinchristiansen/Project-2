@@ -10,10 +10,6 @@ router.get('/login', (req, res) => {
     res.render('login-page');
 });
 
-router.get('/quizsearch', (req, res) => {
-    res.render('quiz-search-page');
-});
-
 router.get('/end', (req, res) => {
     res.render('quiz-end-page');
 })
