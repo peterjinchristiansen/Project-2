@@ -12,16 +12,32 @@
         <a href="index.html" class="float-left">Quixotic Quizzes</a>
         <a href="" class="float-right">Login/Sign Up</a>
     </header>
-
+ 
     <div class="flexbox-single">
         <section class="outline-6">
             <h2 id=questionNumber>Question #1</h2>
-            <div id="choices">
-    
-            </div>
+                <form action="submit">
+                    <label for="questionLabel">Content of Question</label>
+                    <input type="text" id="questionLabel" name="questionLabel" placeholder="Question">
+                    <button class="btn btn-success" onclick="addQuestion()">Add Question</button>
+                </form>
+ 
+                <form action="submit">
+                    <label for="correctAnswer">Enter the Correct Answer</label>
+                    <input type="text" id="correctAnswer" name="correctAnswer" placeholder="Correct">
+                    <button class="btn btn-success" onclick="addRight()">Add Correct Answer</button>
+                </form>
+ 
+                <form action="submit">
+                    <label for="incorrectAnswer">Enter an Incorrect Answer</label>
+                    <input type="text" id="incorrectAnswer" name="incorrectAnswer" placeholder="Incorrect">
+                    <button class="btn btn-success" onclick="addWrong()">Add Incorrect Answer</button>
+                </form>
+ 
+                <button class="btn btn-info" onclick="submitQuestion()">Submit Question</button>
         </section>
     </div>
-
+ 
     
     <h6 class="text-center">***these buttons are for navigation between pages while under construction***</h6>
     <a href="../index.html"><button class="btn btn-warning">login/sign up page</button></a>

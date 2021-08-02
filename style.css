@@ -80,11 +80,7 @@ body {
     border-radius: 10px;
 }
 
-.outline-2a {
-    width: 35%;
-}
-
-.outline-2b {
+.outline-2a, .outline-2b {
     width: 35%;
 }
 
