@@ -53,28 +53,28 @@ router.post('/', (req, res) => {
 
 // Put route for /api/quizzes/:id
 router.put('/:id', (req, res) => {
-        Quiz.update(
-            {
-                title: req.body.title,
-                category: req.body.category
-            },
-            {
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(dbQuizData => {
-                if (!dbQuizData) {
-                    res.status(404).json({ message: 'No quiz found with this id' });
-                    return;
-                }
-                res.json(dbQuizData);
-            })
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    
+    Quiz.update(
+        {
+            title: req.body.title,
+            category: req.body.category
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(dbQuizData => {
+            if (!dbQuizData) {
+                res.status(404).json({ message: 'No quiz found with this id' });
+                return;
+            }
+            res.json(dbQuizData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+
 });
 
 // Delete route for /api/quizzes/:id

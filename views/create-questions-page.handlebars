@@ -1,0 +1,43 @@
+<div class="flexbox-stack">
+    <h1> {{quiz.title}}: </h1>
+        <section class="outline-6">
+            <h2>Question</h2>
+                <form action="submit">
+                    <label for="questionLabel">Content of Question</label>
+                    <input type="text" id="questionLabel" name="questionLabel" placeholder="Question">
+                    <button class="btn btn-success" onclick="addQuestion()">Add Question</button>
+                </form>
+ 
+                <form action="submit">
+                    <label for="correctAnswer">Enter the Correct Answer</label>
+                    <input type="text" id="correctAnswer" name="correctAnswer" placeholder="Correct">
+                    <button class="btn btn-success" onclick="addRight()">Add Correct Answer</button>
+                </form>
+ 
+                <form action="submit">
+                    <label for="incorrectAnswer">Enter an Incorrect Answer</label>
+                    <input type="text" id="incorrectAnswer" name="incorrectAnswer" placeholder="Incorrect">
+                    <button class="btn btn-success" onclick="addWrong()">Add Incorrect Answer</button>
+                </form>
+ 
+                <button class="btn btn-info" onclick="submitQuestion()">Submit Question</button>
+        </section>
+
+        {{#if quiz.questions}}
+        <section class="outline-6">
+            <h2>Questions:</h2>
+            <ol class="quiz-list list-group">
+                {{#each quiz.questions as |question|}}
+                <li class="list-group-item">
+                    <h4>Prompt: {{prompt}}</h4>
+                    <h5>Choices: {{choices}}</h5>
+                    <h5>Answer:<strong>{{answer}}</strong></h5>
+                </li>
+                {{/each}}
+            </ol>
+            
+        </section>
+        {{/if}}
+    </div>
+
+    <script src="/javascript/create-question.js"></script>

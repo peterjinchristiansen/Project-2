@@ -12,5 +12,7 @@ router.get('/login', (req, res) => {
 
 router.get('/end', (req, res) => {
     res.render('quiz-end-page');
-})
+});
+
+
 module.exports = router;
