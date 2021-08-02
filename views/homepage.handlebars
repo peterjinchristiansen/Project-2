@@ -1,0 +1,38 @@
+<div class="flexbox">
+        <section class="outline-2a">
+            <h2>Take a Quiz!</h2>
+            <form action="submit">
+                <label for="quiz-search">Search for Quizzes</label>
+                <input type="text" placeholder="Search..." id="quiz-search" name="quiz-search" class="form-input" />
+                </br></br>
+                <input type="submit" value="Search" class="btn btn-success float-right">
+            </form>
+        </section>
+
+        <section class="outline-2b">
+            <h2>Create a Quiz!</h2>
+            <form action="submit">
+                {{> quiz-info }}
+                </br></br>
+                <input type="submit" value="Create Quiz" class="btn btn-success float-right">
+                </form>
+        </section>
+
+        <section class="outline-2c">
+            <h2>Leaderboards</h2>
+            <ol>
+                <li>daft bimbo 1</li>
+                <li>daft bimbo 2</li>
+                <li>daft bimbo 3</li>
+                <li>daft bimbo 4</li>
+                <li>daft bimbo 5</li>
+                <li>daft bimbo 6</li>
+                <li>daft bimbo 7</li>
+                <li>daft bimbo 8</li>
+                <li>daft bimbo 9</li>
+                <li>daft bimbo 10</li>
+            </ol>
+        </section>
+    </div>
+
+    <script src="/javascript/create-quiz.js"></script>
