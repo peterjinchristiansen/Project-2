@@ -90,6 +90,7 @@ body {
 
 .outline-3a {
     width: 25%;
+
 }
 
 .outline-3b {
@@ -114,4 +115,10 @@ body {
 
 .outline-7b, .outline-7c {
     width: 50%;
+}
+
+/* overflow scroll bar for quiz search list */
+.quiz-list {
+    height: 300px;
+    overflow-y: scroll;
 }

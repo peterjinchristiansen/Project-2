@@ -27,4 +27,19 @@ async function newQuizHandler(event) {
 
 }
 
+async function goToSeachHandler(event) {
+    event.preventDefault();
+    // get the searched category and title
+    const title = document.querySelector('input[name="quiz-search"]').value;
+    const category = document.querySelector('select[name="category-search"]').value;
+    
+    if(!title) {
+        document.location.replace(`/search/${category}`);
+    } else {
+        document.location.replace(`/search/${category}/${title}`);
+    }
+}
+
 document.querySelector('.outline-2b').addEventListener('submit', newQuizHandler);
+
+document.querySelector('.outline-2a').addEventListener('submit', goToSeachHandler);
