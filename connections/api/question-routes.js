@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Quiz, Question } = require('../../models');
+const { Quiz, Question, Users } = require('../../models');
 
 // GET route for /api/questions
 router.get('/', (req, res) => {
