@@ -3,8 +3,9 @@ const express = require('express');
 const sequelize = require('./config/connection');
 const routes = require('./connections');
 const path = require('path');
+const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers});
 
 // assigns an instance of express to app
 const app = express();

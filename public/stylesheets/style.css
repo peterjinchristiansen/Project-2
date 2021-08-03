@@ -119,11 +119,17 @@ body {
 
 /* overflow scroll bar for quiz search list */
 .quiz-list {
-    height: 300px;
+    height: 25em;
     overflow-y: scroll;
 }
 
 /* removing bullets from list items */
 #choice-list {
     list-style-type: none;
+}
+
+.quiz { 
+    display: block;
+    font-size: 1.25em;
+    font-weight: bold;
 }

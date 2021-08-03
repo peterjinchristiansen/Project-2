@@ -10,6 +10,7 @@
         </div>
         <div class="outline-3ab">
             <h3 class="text-center">Quiz Info</h3>
+            <div id="quiz-info-wrapper"></div>
         </div>
         <button class="btn btn-success" onclick="quizStart()">Start</button>
     </section>
@@ -20,16 +21,14 @@
         {{else}}
         <h3 class="text-center" id="searchResult">Displaying Search Result: </h3>
         {{/if}}
-        <ul class="quiz-list list-group">
+        <div class="quiz-list list-group">
             {{#each quizzes as |quiz|}}
-            <li class="list-group-item">
-                <div class="quiz">
-                    <h4 class="title">{{title}}</h5>
-                        <h5 class="category">{{category}}</h6>
-                </div>
-            </li>
+                <button type="click" data-info="{{title}}:{{format_date created_at}}:{{question_count}}" class="quiz list-group-item list-group-item-action">
+                    {{title}} <br>
+                    {{category}}
+                </button>
             {{/each}}
-        </ul>
+        </div>
     </section>
 </div>
 

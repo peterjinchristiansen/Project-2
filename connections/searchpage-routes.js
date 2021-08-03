@@ -6,7 +6,11 @@ router.get('/', (req, res) => {
     Quiz.findAll({
         attributes: [
             'title',
-            'category'
+            'category',
+            'created_at',
+            [
+                sequelize.literal('(SELECT COUNT(*) FROM Question WHERE Quiz.id = Question.quiz_id)'), 'question_count'
+            ]
         ]
         // add in an includes that will get the user that created the quiz
     })
@@ -27,7 +31,11 @@ router.get('/:category', (req, res) => {
         },
         attributes: [
             'title',
-            'category'
+            'category',
+            'created_at',
+            [
+                sequelize.literal('(SELECT COUNT(*) FROM Question WHERE Quiz.id = Question.quiz_id)'), 'question_count'
+            ]
         ]
         // add in an includes that will get the user that created the quiz
     })
@@ -51,7 +59,11 @@ router.get('/:category/:title', (req, res) => {
         },
         attributes: [
             'title',
-            'category'
+            'category',
+            'created_at',
+            [
+                sequelize.literal('(SELECT COUNT(*) FROM Question WHERE Quiz.id = Question.quiz_id)'), 'question_count'
+            ]
         ]
         // add in an includes that will get the user that created the quiz
     })
