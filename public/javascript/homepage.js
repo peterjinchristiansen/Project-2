@@ -1,3 +1,4 @@
+
 async function newQuizHandler(event) {
     event.preventDefault();
     // get the quiz title and category from the homepage
@@ -14,13 +15,16 @@ async function newQuizHandler(event) {
             headers: {
                 'Content-Type': 'application/json'
             }
+        }).then(res => res.json())
+        .then(quiz => {
+           const newQuizId = quiz.id;
+           document.location.replace(`/create/${newQuizId}`);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
 
-        if(response.ok) {
-            document.location.replace('/');
-        } else {
-            alert(response.statusText);
-        }
     } else {
         alert("Please Input a Title and Select a Category for your Quiz!")
     }
