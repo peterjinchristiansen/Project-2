@@ -122,3 +122,8 @@ body {
     height: 300px;
     overflow-y: scroll;
 }
+
+/* removing bullets from list items */
+#choice-list {
+    list-style-type: none;
+}
