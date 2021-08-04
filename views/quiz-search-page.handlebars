@@ -23,7 +23,7 @@
         {{/if}}
         <div class="quiz-list list-group">
             {{#each quizzes as |quiz|}}
-                <button type="click" data-info="{{title}}:{{format_date created_at}}:{{question_count}}" class="quiz list-group-item list-group-item-action">
+                <button type="click" data-info="{{id}}:{{title}}:{{format_date created_at}}:{{question_count}}" class="quiz list-group-item list-group-item-action">
                     {{title}} <br>
                     {{category}}
                 </button>
