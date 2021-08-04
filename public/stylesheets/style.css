@@ -133,3 +133,7 @@ body {
     font-size: 1.25em;
     font-weight: bold;
 }
+
+.checkbox {
+    margin-left: 3px;
+}
