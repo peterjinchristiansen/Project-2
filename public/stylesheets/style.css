@@ -1,0 +1,129 @@
+body {
+    background-image: url("https://image.freepik.com/free-vector/white-abstract-background-design_23-2148825582.jpg");
+}
+
+/* nav bar */
+ 
+.nav-bar {
+    overflow: hidden;
+    background-color: green;
+    font-weight: 500;
+}
+ 
+.nav-bar a {
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: blue;
+    background-color: red;
+}
+ 
+.nav-bar a:hover {
+    background-color: #400000;
+    color: #82edfd;
+}
+ 
+.float-left {
+    float: left;
+}
+ 
+.float-right {
+    float: right;
+}
+
+.display-block {
+    display: block;
+}
+ 
+.flexbox {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flexbox-single {
+    display: flex;
+    justify-content: center;
+}
+
+.flexbox-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.outline {
+    padding: 10px;
+    margin: 20px;
+    border: solid black 1px;
+    width: 45%;
+    text-align: center;
+    border-radius: 10px;
+}
+ 
+.form {
+    width: 80%;
+}
+
+.outline-2a, .outline-2b, .outline-2c, .outline-3a, .outline-3b, .outline-3aa, .outline-3ab, .outline-4b, .outline-5a, .outline-6, .outline-7a, .outline-7b, .outline-7ba, .outline-7c, .outline-7ca {
+    padding: 10px;
+    margin: 20px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.outline-4a {
+    padding: 10px;
+    margin: 20px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.outline-2a, .outline-2b {
+    width: 35%;
+}
+
+.outline-2c {
+    width: 20%;
+}
+
+.outline-3a {
+    width: 25%;
+
+}
+
+.outline-3b {
+    width: 65%
+}
+
+.outline-4b {
+    height: 30%;
+}
+
+.outline-5a {
+    width: 50%;
+}
+
+.outline-6 {
+    width: 70%;
+}
+
+.outline-7a {
+    width: 40%;
+}
+
+.outline-7b, .outline-7c {
+    width: 50%;
+}
+
+/* overflow scroll bar for quiz search list */
+.quiz-list {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+/* removing bullets from list items */
+#choice-list {
+    list-style-type: none;
+}

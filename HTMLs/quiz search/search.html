@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <title>Quixotic</title>
+</head>
+<body>
+    <header class="nav-bar">
+        <a href="../index.html" class="float-left">Quixotic Quizzes</a>
+        <a href="" class="float-right">Login/Sign Up</a>
+    </header>
+
+    <div class="flexbox">
+        <section class="outline-3a">
+            <div class="outline-3aa">
+                <h3 class="text-center">Quiz Search</h3>
+                <form action="submit">
+                    <label for="quiz-title">Quiz Title</label>
+                    <input type="text" placeholder="Title..." id="quiz-title" name="quiz-title" class="form-input" />
+                    </br></br>
+                    <label for="quiz-category">Choose a Category</label>
+                    <select name="quiz-category" id="quiz-category">
+                        <option value="placeholder1">Placeholder</option>
+                        <option value="placeholder2">Placeholder</option>
+                        <option value="placeholder3">Placeholder</option>
+                        <option value="placeholder4">Placeholder</option>
+                    </select>
+                    </br></br>
+                    <input type="submit" value="Search Quizzes" class="btn btn-success">
+                    </form>
+            </div>
+            <div class="outline-3ab">
+                <h3 class="text-center">Quiz Info</h3>
+            </div>
+            <button class="btn btn-success" onclick="quizStart()">Start</button>        
+        </section>
+
+        <section class="outline-3b">
+            <h3 class="text-center" id="searchResult">Displaying Search Result: </h3>
+        </section>
+    </div>
+
+
+
+    <h6 class="text-center">***these buttons are for navigation between pages while under construction***</h6>
+    <a href="../index.html"><button class="btn btn-warning">login/sign up page</button></a>
+    <a href="../end of quiz/end.html"><button class="btn btn-warning">quiz end page</button></a>
+    <a href="../create question/create.html"><button class="btn btn-warning">create question page</button></a>
+    <a href="../questions/questions.html"><button class="btn btn-warning">questions page</button></a>
+    <a href="../user profile/profile.html"><button class="btn btn-warning">user profile page</button></a>
+    <a href="../home page/home.html"><button class="btn btn-warning">home page</button></a>
+</body>
+</html>
