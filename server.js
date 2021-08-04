@@ -1,4 +1,6 @@
 // requires express.js package and the created sequelize const from our connection.js file
+require('dotenv').config();
+
 const express = require('express');
 const sequelize = require('./config/connection');
 const routes = require('./connections');
@@ -6,6 +8,7 @@ const path = require('path');
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({helpers});
+const session = require('express-session');
 
 // assigns an instance of express to app
 const app = express();
@@ -20,6 +23,13 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session(
+    {
+        secret: process.env.SESS_SECRET,
+        resave: false,
+        saveUninitialized: true,
+    }
+))
 
 // turn on routes
 app.use(routes);
