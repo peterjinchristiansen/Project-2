@@ -34,7 +34,7 @@ router.post('/auth', async function (req, res) {
 router.get('/:id', async function (req, res) {
     Users.findOne({
         where: {
-            username: req.params.id
+            id: req.params.id
         }
     })
         .then(dbUserData => res.json(dbUserData))

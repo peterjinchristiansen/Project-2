@@ -2,11 +2,11 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Quiz, Question } = require('../models');
 
-router.get('/', (req, res) => {
+router.get('/home', (req, res) => {
     res.render('homepage');
 });
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     res.render('login-page');
 });
 
