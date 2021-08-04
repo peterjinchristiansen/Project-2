@@ -3,20 +3,34 @@ async function loginHandler(event) {
     const username = document.querySelector('input[name="username-login"]').value;
     const password = document.querySelector('input[name="password-login"]').value;
 
-    const response = await fetch('/api/user/auth', {
-        method: 'GET',
-        body: JSON.stringify({
-            username,
-            password
-        }),
-        headers: {
-            'Content-Type': 'application/json'
+    if (username && password) {
+        const usernameValidate = await fetch('/api/user/' + username)
+            .then(res => res.json())
+
+        if (usernameValidate != null) {
+            const userHash = usernameValidate.password;
+            
+            const response = await fetch('/api/user/auth', {
+                method: 'POST',
+                body: JSON.stringify({
+                    username,
+                    password,
+                    userHash
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (response.ok) {
+                alert('ok');
+            } else {
+                alert(response.statusText);
+            }
+        } else {
+            alert('Incorrect username or password.')
         }
-    });
-    if (response.ok) {
-        document.location.reload();
     } else {
-        alert(response.statusText);
+        alert('Enter your username and password.');
     }
 }
 
@@ -53,5 +67,5 @@ async function newUserHandler(event) {
     }
 }
 
-    document.getElementById('btn-register').addEventListener('click', newUserHandler);
-    document.getElementById('btn-login').addEventListener('click', loginHandler);
+document.getElementById('btn-register').addEventListener('click', newUserHandler);
+document.getElementById('btn-login').addEventListener('click', loginHandler);
