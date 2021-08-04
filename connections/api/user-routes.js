@@ -1,7 +1,18 @@
 const router = require('express').Router();
 const { Quiz, Question, Users } = require('../../models');
 const bcrypt = require('bcrypt');
+const express = require('express');
+const app = express();
 
+
+// GET route for /api/user/auth/login
+router.post('/auth/login', async function (req, res) {
+    app.get('/', function (req, res, next) {
+        req.session.loggedIn = true;
+        req.session.username = req.body.username;
+    })
+    
+})
 // GET route for /api/user/auth
 router.post('/auth', async function (req, res) {
     console.log(req.body.password);
