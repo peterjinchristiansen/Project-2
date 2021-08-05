@@ -1,12 +1,13 @@
 body {
     background-image: url("https://image.freepik.com/free-vector/white-abstract-background-design_23-2148825582.jpg");
+    font-family: 'Lato', sans-serif;
 }
 
 /* nav bar */
  
 .nav-bar {
     overflow: hidden;
-    background-color: green;
+    background-color: #333333;
     font-weight: 500;
 }
  
@@ -16,12 +17,19 @@ body {
     font-size: 20px;
     text-decoration: none;
     color: blue;
-    background-color: red;
+    background-color: #FDA50F;
 }
  
 .nav-bar a:hover {
     background-color: #400000;
     color: #82edfd;
+    transition: all 1s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
  
 .float-left {
