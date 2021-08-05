@@ -5,6 +5,7 @@ const { Quiz, Question } = require('../models');
 router.get('/', (req, res) => {
     Quiz.findAll({
         attributes: [
+            'id',
             'title',
             'category',
             'created_at',
@@ -30,6 +31,7 @@ router.get('/:category', (req, res) => {
             category: req.params.category
         },
         attributes: [
+            'id',
             'title',
             'category',
             'created_at',
@@ -58,6 +60,7 @@ router.get('/:category/:title', (req, res) => {
             category: req.params.category
         },
         attributes: [
+            'id',
             'title',
             'category',
             'created_at',

@@ -26,11 +26,11 @@ async function quizSelectHandler(event) {
     quizInfo.innerHTML = '';
 
     let quizTitle = document.createElement('h6');
-    quizTitle.innerHTML = `Title: ${data[0]}`;
+    quizTitle.innerHTML = `Title: ${data[1]}`;
     let quizCreated = document.createElement('h6');
-    quizCreated.innerHTML = `Created: ${data[1]}`;
+    quizCreated.innerHTML = `Created: ${data[2]}`;
     let quizNoQuest = document.createElement('h6');
-    quizNoQuest.innerHTML = `No. of Questions: ${data[2]}`;
+    quizNoQuest.innerHTML = `No. of Questions: ${data[3]}`;
 
     quizInfo.appendChild(quizTitle);
     quizInfo.appendChild(quizNoQuest);
