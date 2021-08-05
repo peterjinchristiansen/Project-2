@@ -38,14 +38,14 @@ async function validateSession(username) {
     const response = await fetch('/api/user/auth/login', {
         method: 'POST',
         body: JSON.stringify({
-            username,
+            username
         }),
         headers: {
             'Content-Type': 'application/json'
         }
     });
     if (response.ok) {
-        document.location.reload();
+        document.location.replace('/');
     } else {
         alert(response.statusText);
     }
@@ -72,7 +72,7 @@ async function newUserHandler(event) {
                 }
             });
             if (response.ok) {
-                document.location.reload();
+                document.location.replace('/');
             } else {
                 alert(response.statusText);
             }

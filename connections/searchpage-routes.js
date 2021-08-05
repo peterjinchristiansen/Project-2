@@ -15,14 +15,18 @@ router.get('/', (req, res) => {
         ]
         // add in an includes that will get the user that created the quiz
     })
-    .then(dbQuizData => {
-        const quizzes = dbQuizData.map(quiz => quiz.get({plain: true}));
-        res.render('quiz-search-page', { quizzes });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+        .then(dbQuizData => {
+            const quizzes = dbQuizData.map(quiz => quiz.get({ plain: true }));
+            res.render('quiz-search-page', {
+                quizzes,
+                user_id: req.session.user_id,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 });
 
 router.get('/:category', (req, res) => {
@@ -41,14 +45,18 @@ router.get('/:category', (req, res) => {
         ]
         // add in an includes that will get the user that created the quiz
     })
-    .then(dbQuizData => {
-        const quizzes = dbQuizData.map(quiz => quiz.get({plain: true}));
-        res.render('quiz-search-page', { quizzes });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+        .then(dbQuizData => {
+            const quizzes = dbQuizData.map(quiz => quiz.get({ plain: true }));
+            res.render('quiz-search-page', {
+                quizzes,
+                user_id: req.session.user_id,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 });
 
 router.get('/:category/:title', (req, res) => {
@@ -70,15 +78,20 @@ router.get('/:category/:title', (req, res) => {
         ]
         // add in an includes that will get the user that created the quiz
     })
-    .then(dbQuizData => {
-        const quizzes = dbQuizData.map(quiz => quiz.get({plain: true}));
-        const search = {searchedfor: true, searched: req.params.title};
-        res.render('quiz-search-page', { quizzes, search });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+        .then(dbQuizData => {
+            const quizzes = dbQuizData.map(quiz => quiz.get({ plain: true }));
+            const search = { searchedfor: true, searched: req.params.title };
+            res.render('quiz-search-page', {
+                quizzes,
+                search,
+                user_id: req.session.user_id,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 });
 
 module.exports = router;

@@ -15,6 +15,7 @@
             </form>
         </section>
 
+        {{#if loggedIn}}
         <section class="outline-2b">
             <h2>Create a Quiz!</h2>
             <form action="submit">
@@ -23,8 +24,9 @@
                 <input type="submit" value="Create Quiz" class="btn btn-success float-right">
                 </form>
         </section>
+        {{/if}}
 
-        <section class="outline-2c">
+        {{!-- <section class="outline-2c">
             <h2>Leaderboards</h2>
             <ol>
                 <li>Placeholder 1</li>
@@ -39,6 +41,6 @@
                 <li>Placeholder 10</li>
             </ol>
         </section>
-    </div>
+    </div> --}}
 
     <script src="/javascript/homepage.js"></script>
