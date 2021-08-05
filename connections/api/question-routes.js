@@ -13,6 +13,21 @@ router.get('/', (req, res) => {
     });
 });
 
+// GET route for /api/questions/:quizid
+router.get('/:quizid', (req, res) => {
+    Question.findAll({
+        where: {
+            quiz_id: req.params.quizid
+        },
+        order:[['quiz_id', 'DESC']]
+    })
+    .then(dbQuestionData => res.json(dbQuestionData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 // POST route for /api/questions
 router.post('/', (req, res) => {
     Question.create({

@@ -1,0 +1,24 @@
+<div class="flexbox-stack">
+    <h1> {{quiz.title}} </h1>
+    {{#if quiz.questions}}
+    <section class="outline-6">
+        <div class=".question-list">
+            {{#each quiz.questions as |question|}}
+            <li class="list-group-item">
+                <h4 id=" {{prompt}} ">Question: {{prompt}}</h4>
+                                {{#each choices}}
+                                    <button type="click" data-info="{{question.id}}:{{this}}:{{question.answer}}" id="{{question.prompt}}" class="quiz list-group-item list-group-item-action">
+                                        {{this}}
+                                    </button>
+                                {{/each}}
+
+                <span id="{{question.id}}"></span>
+            </li>
+            <p />
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
+</div>
+
+<script src="/javascript/take-quiz.js"></script>
