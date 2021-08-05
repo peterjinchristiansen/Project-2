@@ -1,42 +1,27 @@
-var pathArray = window.location.pathname.split('/');
-var quizId = pathArray[pathArray.length - 1];
-/*
-const questionData = startQuiz(quizId);
+var loggedAnswer = [];
 
-async function startQuiz (quizId) {
-    const questionData = await fetch(`/api/questions/` + quizId, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-        .then(res => res.json())
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-    return questionData;
-}
-*/
-
-async function answerSelectHandler (event) {
+async function answerSelectHandler(event) {
     event.preventDefault();
 
     const isButton = event.target.nodeName === 'BUTTON'
-    if(!isButton){
+    if (!isButton) {
         return;
     }
     let data = event.target.dataset.info;
     data = data.split(':');
-    
-    if (data[1] == data[2]) {
-        document.getElementById(data[0]).innerHTML = "Correct!";
-    } else {
-        document.getElementById(data[0]).innerHTML = "Incorrect!";
+
+    currentQuestion = data[0]
+        
+    if (!loggedAnswer.includes(currentQuestion)) {
+        if (data[1] == data[2]) {
+            document.getElementById(data[0]).textContent = 'Correct!';
+            document.getElementById(data[0]).style.color = 'green';
+        } else {
+            document.getElementById(data[0]).textContent = 'Incorrect!';
+            document.getElementById(data[0]).style.color = 'red';
+        }
+        loggedAnswer.push(currentQuestion);
     }
-    
 }
 
 document.addEventListener('click', answerSelectHandler);
-
-startQuiz(quizId);
