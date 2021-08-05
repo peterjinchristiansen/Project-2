@@ -19,8 +19,8 @@ async function quizSelectHandler(event) {
     if(!isButton){
         return;
     }
-    let data = event.target.dataset.info
-    data = data.split(':');
+    window.data = event.target.dataset.info
+    window.data = window.data.split(':');
 
     let quizInfo = document.querySelector('#quiz-info-wrapper');
     quizInfo.innerHTML = '';
@@ -37,6 +37,17 @@ async function quizSelectHandler(event) {
     quizInfo.appendChild(quizCreated);
 }
 
+async function startQuizHandler(event) {
+    event.preventDefault();
+    if (window.data != null) {
+        var quizLocation = window.data[0];
+        document.location.replace(`/take/${quizLocation}`);
+    }
+    console.log(window.data);
+}
+
 document.querySelector('.outline-3aa').addEventListener('submit', searchQuizzesHandler);
 
 document.querySelector('.quiz-list').addEventListener('click', quizSelectHandler);
+
+document.getElementById('btn-start-quiz').addEventListener('click', startQuizHandler);
