@@ -8,14 +8,16 @@ const app = express();
 // GET route for /api/user/auth/login
 router.post('/auth/login', async function (req, res) {
     app.get('/', function (req, res, next) {
+        req.session.user_id = dbUserData.id
         req.session.loggedIn = true;
         req.session.username = req.body.username;
+
+        res.json(dbUserData);
     })
     
 })
 // GET route for /api/user/auth
 router.post('/auth', async function (req, res) {
-    console.log(req.body.password);
     var decryptedPassword = await bcrypt.compare(req.body.password, req.body.userHash);
 
     Users.findOne({

@@ -9,7 +9,19 @@ const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({helpers});
 const session = require('express-session');
+const { Sequelize } = require('sequelize/types');
 
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+    secret: process.env.SESS_SECRET,
+        cookie: {},
+        resave: false,
+        saveUninitialized: true,
+        store: new SequelizeStore({
+            db: sequelize
+        })
+};
 // assigns an instance of express to app
 const app = express();
 // assigns a value to PORT relative to the environment that the code is being run in, if no specific env is found sets PORT to 3001
@@ -23,13 +35,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session(
-    {
-        secret: process.env.SESS_SECRET,
-        resave: false,
-        saveUninitialized: true,
-    }
-))
+app.use(session(sess));
 
 // turn on routes
 app.use(routes);
