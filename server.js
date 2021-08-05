@@ -7,6 +7,7 @@ const routes = require('./connections');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
+const { ExpressHandlebars } = require('express-handlebars');
 const hbs = exphbs.create({});
 
 // assigns an instance of express to app
