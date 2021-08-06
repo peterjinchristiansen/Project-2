@@ -1,12 +1,13 @@
 body {
-    background-image: url(../images/spikes.png);
+    background-image: url("https://image.freepik.com/free-vector/white-abstract-background-design_23-2148825582.jpg");
+    font-family: 'Lato', sans-serif;
 }
 
 /* nav bar */
  
 .nav-bar {
     overflow: hidden;
-    background-color: rgb(0, 132, 255);
+    background-color: #333333;
     font-weight: 500;
 }
  
@@ -15,12 +16,20 @@ body {
     padding: 10px 10px;
     font-size: 20px;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.685);
-    background-color: rgb(7, 42, 158);
+    color: rgb(73, 60, 150);
+    background-color: #FDA50F;
 }
  
 .nav-bar a:hover {
-    color: #c8d415;
+    background-color: #400000;
+    color: #82edfd;
+    transition: all 1s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
  
 .float-left {
