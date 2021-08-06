@@ -10,7 +10,7 @@ body {
     font-weight: 500;
 }
  
-.nav-bar a {
+.nav-bar a, .nav-bar button {
     text-align: center;
     padding: 10px 10px;
     font-size: 20px;
@@ -99,7 +99,7 @@ body {
 }
 
 .outline-3b {
-    width: 65%
+    width: 65%;
     background-color: white;
 }
 

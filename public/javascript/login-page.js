@@ -22,7 +22,7 @@ async function loginHandler(event) {
                 }
             });
             if (response.ok) {
-                window.location.replace('/');
+                validateSession(username)
             } else {
                 alert(response.statusText);
             }
