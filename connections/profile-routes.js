@@ -1,39 +1,39 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Quiz, Question } = require('../models');
+const { Quiz, Question, Users } = require('../models');
 
 router.get('/:id', (req, res) => {
     if (req.session.loggedIn) {
-        Quiz.findOne({
+        Users.findOne({
             where: {
                 id: req.params.id
             },
             attributes: [
-                'id',
-                'title',
-                'category',
-                'created_at'
+                'username'
             ],
             include: [
                 {
-                    model: Question,
-                    attributes: ['id', 'prompt', 'choices', 'answer']
+                    model: Quiz,
+                    attributes: [
+                        'id',
+                        'title',
+                        'category'
+                    ]
                 }
             ]
         })
-            .then(dbQuizData => {
-                const quiz = dbQuizData.get({ plain: true });
-                res.render('create-questions-page', { 
-                    quiz,
+            .then(dbUserData => {
+                const userData = dbUserData.get({ plain: true });
+                res.render('profile-page', {
+                    userData,
                     user_id: req.session.user_id,
                     loggedIn: req.session.loggedIn
                 });
-                console.log(quiz);
             })
             .catch(err => {
                 console.log(err);
                 res.status(500).json(err);
-            });
+            })
     } else {
         res.render('homepage', {
             user_id: req.session.user_id,

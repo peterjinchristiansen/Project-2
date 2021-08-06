@@ -23,6 +23,13 @@ Quiz.init(
         category: {
             type: DataTypes.ENUM('General','Coding'),
             allowNull: false
+        },
+        user_id: {
+                type: DataTypes.INTEGER,
+                references: {
+                    model: 'users',
+                    key: 'id'
+                }
         }
     },
     // Table Configuration Specs

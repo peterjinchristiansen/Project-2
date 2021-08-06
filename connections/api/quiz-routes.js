@@ -7,10 +7,15 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'title',
-            'category'
+            'category',
+            'user_id'
         ],
         order: [['created_at', 'DESC']],
         include: [
+            {
+                model: Users,
+                attributes: ['username']
+            },
             {
                 model: Question,
                 attributes: ['id', 'prompt', 'choices', 'answer']
@@ -42,7 +47,8 @@ router.get('/:category', (req, res) => {
 router.post('/', (req, res) => {
     Quiz.create({
         title: req.body.title,
-        category: req.body.category
+        category: req.body.category,
+        user_id: req.session.user_id
     })
         .then(dbQuizData => res.json(dbQuizData))
         .catch(err => {

@@ -44,6 +44,7 @@ async function goToSeachHandler(event) {
     }
 }
 
+document.querySelector('.outline-2a').addEventListener('submit', goToSeachHandler);
+
 document.querySelector('.outline-2b').addEventListener('submit', newQuizHandler);
 
-document.querySelector('.outline-2a').addEventListener('submit', goToSeachHandler);

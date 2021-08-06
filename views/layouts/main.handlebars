@@ -13,12 +13,29 @@
 <body>
     <header class="nav-bar">
         <a href="/" class="float-left">Quixotic Quizzes</a>
+        {{#if loggedIn}}
+        <div class="float-right d-flex align-content-center">
+            <button id="logout" class="float-right">Logout</button>
+            <a href="/profile/{{user_id}}" class="float-right">Profile</a>
+        </div>
+        {{else}}
         <a href="/login" class="float-right">Login/Sign Up</a>
+        {{/if}}
     </header>
 
     <main>
         {{{ body }}}
     </main>
+    <script src="/javascript/logout.js"></script>
+
+    {{!-- <h6 class="text-center">***these buttons are for navigation between pages while under construction***</h6>
+    <a href="/login"><button class="btn btn-warning">login/sign up page</button></a>
+    <a href="/search"><button class="btn btn-warning">quiz search page</button></a>
+    <a href="/end"><button class="btn btn-warning">quiz end page</button></a>
+    <a href="/"><button class="btn btn-warning">quiz home page</button></a>
+    <a href="/create/1"><button class="btn btn-warning">quiz creation page for quiz id=1</button></a>
+    <a href="/take/1"><button class="btn btn-warning">take quiz 1</button></a> --}}
+
 </body>
 
 </html>

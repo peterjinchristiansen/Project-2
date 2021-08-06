@@ -24,4 +24,4 @@ async function answerSelectHandler(event) {
     }
 }
 
-document.addEventListener('click', answerSelectHandler);
+document.querySelector('.question-list').addEventListener('click', answerSelectHandler);
