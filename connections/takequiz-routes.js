@@ -22,6 +22,7 @@ router.get('/:id', (req, res) => {
     })
     .then(dbQuizData => {
         var quiz = dbQuizData.get({plain: true});
+        const lastId = quiz.questions[quiz.questions.length-1].id;
         
         for (let i = 0; i < quiz.questions.length; i++) {
             quiz.questions[i].choices = quiz.questions[i].choices.split(',');
@@ -31,7 +32,8 @@ router.get('/:id', (req, res) => {
         console.log(quiz);
         res.render('take-quiz', { quiz,
             user_id: req.session.user_id,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            lastId
          });
     })
     .catch(err => {

@@ -1,7 +1,7 @@
 </br></br>
 
     <h1 class="text-center">Congratulations!</h1>
-</br></br>
+{{!-- </br></br>
     <h2 class="text-center" id="endScore">Score: </h2>
 
     <div class="flexbox-single">
@@ -17,11 +17,11 @@
             <h4 class="text-center" id="quizPercentile">Percentile:</h4>
             <h4 class="text-center" id="timeSpent">Time Spent:</h4>
         </section>
-    </div>
+    </div> --}}
 
 </br></br>
 
     <div class="flexbox">
-        <button class="btn btn-success" onclick="startQuiz()">Retake Quiz</button>
-        <a href="/quizsearch"><button class="btn btn-success">Take Another Quiz</button></a>
+        <a href="/take/{{quiz_id}}"<button class="btn btn-success" onclick="startQuiz()">Retake Quiz</button>
+        <a href="/search"><button class="btn btn-success">Take Another Quiz</button></a>
     </div>

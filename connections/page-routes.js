@@ -20,8 +20,9 @@ router.get('/login', (req, res) => {
     }
 });
 
-router.get('/end', (req, res) => {
+router.get('/end/:id', (req, res) => {
     res.render('quiz-end-page', {
+        quiz_id: req.params.id,
         user_id: req.session.user_id,
         loggedIn: req.session.loggedIn
     });
