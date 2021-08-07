@@ -1,0 +1,26 @@
+    <div class="flexbox-single">
+        <h2 id="profileDisplay" class="outline-7a">Username: {{userData.username}}</h2>
+    </div>
+
+    <div class="flexbox">
+        <section class="outline-7b">
+            <h4>Your Quizzes</h4>
+            <section class="quiz-list list-group outline-7ba" id="myQuizzes">
+                {{#each userData.quizzes as |quiz|}}
+                <button type="click" data-info="{{id}}:{{title}}:{{format_date created_at}}" class="quiz list-group-item list-group-item-action">
+                    {{title}} <br>
+                    {{category}}
+                </button>
+            {{/each}}
+            </section>
+        </section>
+
+        {{!-- <section class="outline-7c">
+            <h4>Quiz History</h4>
+            <section class="outline-7ca" id="myHistory">
+
+            </section>
+        </section> --}}
+    </div>
+
+    <script src="/javascript/profile-page.js"></script>

@@ -1,0 +1,60 @@
+<div class="flexbox-stack">
+    <h1> {{quiz.title}}: </h1>
+    <section class="outline-6">
+        <h2>Question</h2>
+        <form class="flexbox-stack" action="submit">
+            <div>
+                <label for="choice">Question Prompt</label>
+                <input type="text" id="prompt" name="prompt" placeholder="Prompt">
+            </div>
+            </br>
+            <div>
+                <ul id="choice-list">
+                    <li id="choice1">
+                        <label for="choice1">Enter a Choice</label>
+                        <input type="text" name="choice1" placeholder="Choice">
+                        <input type="checkbox" id="answer1">
+                    </li>
+                    <li id="choice2" class="mt-3">
+                        <label for="choice1">Enter a Choice</label>
+                        <input type="text" name="choice2" placeholder="Choice">
+                        <input type="checkbox" id="answer2">
+                    </li>
+                </ul>
+                </ul>
+            </div>
+            </br>
+            <div>
+                <button class="btn btn-success add-btn">Add a Choice</button>
+                <button class="btn btn-danger remove-btn">Remove a Choice</button>
+            </div>
+            </br>
+            <button class="btn btn-info submit-btn">Submit Question</button>
+        </form>
+    </section>
+
+    {{#if quiz.questions}}
+    <section class="outline-6">
+        <h2>Questions:</h2>
+        <ol class="quiz-list list-group">
+            {{#each quiz.questions as |question|}}
+            <li class="list-group-item">
+                <div class="flexbox">
+                    <div class="flex-item col-10">
+                    <h4 id="question{{id}}">Prompt: {{prompt}}</h4>
+                    <h5>Choices: {{choices}}</h5>
+                    <h5>Answer:<strong>{{answer}}</strong></h5>
+                    </div>
+                    <div class="flex-item d-flex align-content-center col-2">
+                        <button data-id="{{id}}" class="btn btn-warning delete-question-btn col-12">Delete</button>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ol>
+
+    </section>
+    {{/if}}
+</div>
+
+<script src="/javascript/create-question.js"></script>

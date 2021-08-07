@@ -1,27 +1,35 @@
 body {
     background-image: url("https://image.freepik.com/free-vector/white-abstract-background-design_23-2148825582.jpg");
+    font-family: 'Lato', sans-serif;
 }
 
 /* nav bar */
  
 .nav-bar {
     overflow: hidden;
-    background-color: green;
+    background-color: #333333;
     font-weight: 500;
 }
  
-.nav-bar a {
+.nav-bar a, .nav-bar button {
     text-align: center;
     padding: 10px 10px;
     font-size: 20px;
     text-decoration: none;
-    color: blue;
-    background-color: red;
+    color: rgb(73, 60, 150);
+    background-color: #FDA50F;
 }
  
 .nav-bar a:hover {
     background-color: #400000;
     color: #82edfd;
+    transition: all 1s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
  
 .float-left {
@@ -59,6 +67,7 @@ body {
     width: 45%;
     text-align: center;
     border-radius: 10px;
+    background-color: white;
 }
  
 .form {
@@ -71,6 +80,7 @@ body {
     border: solid black 1px;
     text-align: center;
     border-radius: 10px;
+    background-color: white;
 }
 
 .outline-4a {
@@ -78,40 +88,72 @@ body {
     margin: 20px;
     text-align: left;
     border-radius: 10px;
+    background-color: white;
 }
 
 .outline-2a, .outline-2b {
     width: 35%;
+    background-color: white;
 }
 
 .outline-2c {
     width: 20%;
+    background-color: white;
 }
 
 .outline-3a {
     width: 25%;
+    background-color: white;
+
 }
 
 .outline-3b {
-    width: 65%
+    width: 65%;
+    background-color: white;
 }
 
 .outline-4b {
     height: 30%;
+    background-color: white;
 }
 
 .outline-5a {
     width: 50%;
+    background-color: white;
 }
 
 .outline-6 {
     width: 70%;
+    background-color: white;
 }
 
 .outline-7a {
     width: 40%;
+    background-color: white;
 }
 
 .outline-7b, .outline-7c {
     width: 50%;
+    background-color: white;
+}
+
+/* overflow scroll bar for quiz search list */
+.quiz-list {
+    height: 25em;
+    overflow-y: scroll;
+}
+
+/* removing bullets from list items */
+#choice-list {
+    list-style-type: none;
+}
+
+.quiz { 
+    display: block;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.checkbox {
+    margin-left: 3px;
 }
