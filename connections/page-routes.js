@@ -20,8 +20,11 @@ router.get('/login', (req, res) => {
     }
 });
 
-router.get('/end', (req, res) => {
+router.get('/end/:score/:max/:id', (req, res) => {
     res.render('quiz-end-page', {
+        score: req.params.score,
+        max: req.params.max,
+        quiz_id: req.params.id,
         user_id: req.session.user_id,
         loggedIn: req.session.loggedIn
     });

@@ -2,9 +2,9 @@
 
     <h1 class="text-center">Congratulations!</h1>
 </br></br>
-    <h2 class="text-center" id="endScore">Score: </h2>
+    <h2 class="text-center" id="endScore">Score: {{score}}/{{max}} </h2>
 
-    <div class="flexbox-single">
+    {{!-- <div class="flexbox-single">
         <section class="outline">
             <h4 class="text-center">Highscores:</h4>
                 <ol class="d-flex flex-column align-items-center">
@@ -17,11 +17,11 @@
             <h4 class="text-center" id="quizPercentile">Percentile:</h4>
             <h4 class="text-center" id="timeSpent">Time Spent:</h4>
         </section>
-    </div>
+    </div> --}}
 
 </br></br>
 
     <div class="flexbox">
-        <button class="btn btn-success" onclick="startQuiz()">Retake Quiz</button>
-        <a href="/quizsearch"><button class="btn btn-success">Take Another Quiz</button></a>
+        <a href="/take/{{quiz_id}}"<button class="btn btn-success" onclick="startQuiz()">Retake Quiz</button>
+        <a href="/search"><button class="btn btn-success">Take Another Quiz</button></a>
     </div>

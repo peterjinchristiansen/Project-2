@@ -1,4 +1,8 @@
-var loggedAnswer = [];
+const loggedAnswer = [];
+const quizLength = document.querySelector('.question-list').childElementCount;
+const quizId = parseInt(document.getElementById('quiz-title').dataset.quiz);
+console.log(quizId);
+let score = 0;
 
 async function answerSelectHandler(event) {
     event.preventDefault();
@@ -16,11 +20,15 @@ async function answerSelectHandler(event) {
         if (data[1] == data[2]) {
             document.getElementById(data[0]).textContent = 'Correct!';
             document.getElementById(data[0]).style.color = 'green';
+            score++;
         } else {
             document.getElementById(data[0]).textContent = 'Incorrect!';
             document.getElementById(data[0]).style.color = 'red';
         }
         loggedAnswer.push(currentQuestion);
+        if(loggedAnswer.length === quizLength) {
+            document.location.replace(`/end/${score}/${quizLength}/${quizId}`);
+        }
     }
 }
 
