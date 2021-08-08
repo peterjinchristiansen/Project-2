@@ -1,9 +1,6 @@
 const router = require('express').Router();
 const { Quiz, Question, Users } = require('../../models');
 const bcrypt = require('bcrypt');
-const express = require('express');
-const app = express();
-
 
 // GET route for /api/user/auth/login
 router.post('/auth/login', async function (req, res) {
